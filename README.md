@@ -1,5 +1,5 @@
 # esp32-enumeration
-Using an ESP32 to automate the noisey parts of the Enumeration process.
+Use an ESP32 to automate the noisey parts of the Enumeration process.
 
 -- I'm using the ESP32 WROOM dev board.. It should work on most ESP32 boards tho\
 -- Make sure to update partition scheme to allocate more space.
