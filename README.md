@@ -2,7 +2,7 @@
 Automate the enumeration process using an ESP32
 
 -- Using the ESP32 WROOM dev board\
--- larger partition 
+-- Make sure to update partition scheme to allocate more space.
 
 Arduino IDE you can change your partition by selecting: Tools -> Partition Scheme -> Huge App
 
