@@ -15,7 +15,7 @@ Once the device is powered on it will do the following:
 2. Scan the area for Bluetooth devices nearby
 3. Run a ping sweep on network
 4. Run a port scan on every device that responded to the ping sweep
-5. Log results to a discord server
+5. Log results to a discord channel
 
 Libraries used:\
 AsyncTCP -> by Hristo Gochkov\
