@@ -1,8 +1,9 @@
 # esp32-enumeration
 Automate the enumeration process using an ESP32
 
-*Using the ESP32 WROOM dev board
-*larger partition: huge app
+--Using the ESP32 WROOM dev board
+
+--larger partition: huge app
 
 Once the device is powered on it will do the following:
 
@@ -14,7 +15,9 @@ Once the device is powered on it will do the following:
 
 Libraries used:
 AsyncTCP by Hristo Gochkov
+
 Discord_WebHook by Usini
+
 ESPping by dvarrel
 
 Educational purposes only! Running a port scan on devices you do not own is Illegal!
