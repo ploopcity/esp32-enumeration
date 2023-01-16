@@ -1,8 +1,13 @@
 # esp32-enumeration
 Automate the enumeration process using an ESP32
 
-Using the ESP32 WROOM dev board\
-larger partition: huge app
+-- Using the ESP32 WROOM dev board\
+-- larger partition 
+
+Arduino IDE you can change your partition by selecting: Tools -> Partition Scheme -> Huge App
+
+Platform.io IDE you can change your partition scheme by updating the platformio.ini file add add this line to your board settings:\
+"board_build.partitions = min_spiffs.csv"
 
 Once the device is powered on it will do the following:
 
