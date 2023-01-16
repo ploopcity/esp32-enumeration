@@ -308,7 +308,7 @@ void setup(void) {
   
   //Port Scan
   if(targetList.size() > 0){
-    sendToDiscord("Ping sweep completed... "+String(targetList.size())+" Devices found. Starting port scan on those devices");
+    sendToDiscord("Ping sweep completed, "+String(targetList.size())+" devices found. Starting port scan on those devices");
     delay(200);
     for (int i = 0; i < targetList.size(); i++){   
     port_scanner(targetList[i]);
