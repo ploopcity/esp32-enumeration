@@ -1,5 +1,5 @@
 # esp32-enumeration
-Use an ESP32 to automate the noisey parts of the Enumeration process.
+Automate the 'noisy' parts of a pen-test; Enumeration.. Use the ESP32 to run a ping sweep on current network, then run a port scan on all the devices that responded to the ping sweep.. Log results to a discord channel of your choice.
 
 -- I'm using the ESP32 WROOM dev board.. It should work on most ESP32 boards tho\
 -- Make sure to update partition scheme to allocate more space.
@@ -13,7 +13,7 @@ Once the device is powered on it will do the following:
 
 1. Connect to a wifi network it knows about. Once connected:
 2. Scan the area for Bluetooth devices nearby
-3. Run a ping sweep on network
+3. Run a ping sweep on subnet
 4. Run a port scan on every device that responded to the ping sweep
 5. Log results to a discord channel
 
