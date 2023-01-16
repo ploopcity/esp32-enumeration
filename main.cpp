@@ -72,6 +72,9 @@ void sendToDiscord(String the_message)
 }
 
 void port_scanner(String target_ip) {
+  
+  IPAddress subnet = WiFi.subnetMask();
+  IPAddress baseIP = WiFi.localIP() & subnet;
   IPAddress ip;
 
   Serial.print("Starting port scan on ");
