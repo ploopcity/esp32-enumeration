@@ -8,13 +8,14 @@
 #include <vector>
 #include <Discord_WebHook.h>
 
-const String device_name = "Device1";
-String DISCORD_WEBHOOK = "YOUR DISCORD WEBHOOK URL";
+const String device_name = "Device1"; // name the device whatever you want
+String DISCORD_WEBHOOK = "YOUR DISCORD WEBHOOK URL"; //change with your discord webhook URL
 Discord_Webhook discord;
 
 bool currentlySending = false;
 bool wifiState = false;
 
+//put in some known wifi credentials
 const int num_networks = 2;
 const char* networks[num_networks][2] = {
   {"Known wifi 1", "password 1"},
