@@ -23,3 +23,5 @@ Discord_WebHook -> by Usini\
 ESPping -> by dvarrel
 
 Educational purposes only! Running a port scan on devices you do not own is Illegal!
+
+"Stay safe in cyber space" - PenAce
