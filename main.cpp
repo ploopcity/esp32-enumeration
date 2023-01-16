@@ -82,6 +82,7 @@ void port_scanner(String target_ip) {
   String allResults = "";
   
 
+  //cycle thru popular ports
   for (int port = 0; port < PORT_COUNT; port++) {
     int sock;
     sock = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
@@ -134,7 +135,9 @@ String pingSweep() {
   String allResults = "Ping Sweep Results:\n";
   IPAddress localIP = WiFi.localIP();
   IPAddress subnet = WiFi.subnetMask();
-  IPAddress baseIP = WiFi.localIP() & subnet;    
+  IPAddress baseIP = WiFi.localIP() & subnet;
+  
+  //cycle thru each IP on this subnet and send a ping
   for (int i = 1; i < 255; i++) {
     IPAddress targetIP(baseIP[0], baseIP[1], baseIP[2], i);
     if(targetIP.toString() != localIP.toString())
@@ -143,6 +146,7 @@ String pingSweep() {
         if (Ping.ping(targetIP,1)) {
           if(Ping.averageTime() > 0)
           {
+            //device responded to ping.. log it
             String theIPstring = targetIP.toString();
             targetList.push_back(theIPstring);            
             devices += targetIP.toString() + "\n";
