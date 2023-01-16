@@ -8,18 +8,18 @@
 #include <vector>
 #include <Discord_WebHook.h>
 
-const String device_name = "Device1"; // name the device whatever you want
+const String device_name = "Device1"; // name the device whatever you want..
 String DISCORD_WEBHOOK = "YOUR DISCORD WEBHOOK URL"; //change with your discord webhook URL
 Discord_Webhook discord;
 
 bool currentlySending = false;
 bool wifiState = false;
 
-//put in some known wifi credentials
+//put in some known wifi credentials  {"SSID":"PASSWORD"}
 const int num_networks = 2;
 const char* networks[num_networks][2] = {
-  {"Known wifi 1", "password 1"},
-  {"Known wifi 2", "password 2"}
+  {"wifi_name 1", "password 1"},
+  {"wifi_name 2", "password 2"}
 };
 
 const int PORT_COUNT = 32; // Number of ports to scan
@@ -230,7 +230,7 @@ void setup(void) {
   Serial.println("Boot Success!");
   Serial.println("Scanning the area");
 
-  
+  //scan the area for wifi networks.. auto connect to familiar networks
   int n = WiFi.scanNetworks();
   if (n == 0) {
     Serial.println("No WiFi networks found");
@@ -283,6 +283,7 @@ void setup(void) {
   Serial.print("My Global IP: ");
   Serial.println(globalIP);  
   
+  //Send wake up message to discord
   delay(10);
   Serial.println("Sending my wake_up details to discord");
   delay(100);
@@ -295,29 +296,28 @@ void setup(void) {
   sendToDiscord("Global IP: "+globalIP);
   delay(200);
 
+  //Bluetooth Scan
   scanBluetoothDevices();
   delay(200);
 
-  sendToDiscord("Starting Ping Sweep");
-  
+  //Ping Sweep
+  sendToDiscord("Starting Ping Sweep");  
   delay(200);
   pingSweep();
   delay(200);
   
-  
-  
+  //Port Scan
   if(targetList.size() > 0){
     sendToDiscord("Ping sweep completed... "+String(targetList.size())+" Devices found. Starting port scan on those devices");
     delay(200);
-    for (int i = 0; i < targetList.size(); i++){
-    //Serial.println(targetList[i]);     
+    for (int i = 0; i < targetList.size(); i++){   
     port_scanner(targetList[i]);
     delay(100);
     }
   }  
   
   delay(500);
-  sendToDiscord(device_name +" finished all scans... Thanks for playing!");
+  sendToDiscord(device_name +" finished all scans... Thanks for playing!"); //All done notification for discord
   Serial.println("All scans are complete. Standing by");
 }
 
