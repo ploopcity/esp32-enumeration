@@ -1,5 +1,5 @@
 # esp32-enumeration
-Automate the 'noisy' parts of a pen-test; Enumeration.. Use the ESP32 to run a ping sweep on current network, then run a port scan on all the devices that responded to the ping sweep.. Log results to a discord channel of your choice.
+Use an ESP32 to automate the 'noisy' parts of a pen-test; Enumeration.. Script will run a ping sweep on current network, then run a port scan on all the devices that responded to the ping sweep.. Log results to a discord channel of your choice.
 
 -- I'm using the ESP32 WROOM dev board.. It should work on most ESP32 boards tho\
 -- Make sure to update partition scheme to allocate more space.
